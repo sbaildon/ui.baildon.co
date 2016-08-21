@@ -1,0 +1,57 @@
+doctype html
+html(lang='en')
+
+	include ./includes/head.pug
+
+	body
+		#content
+			h1#sInterface
+				a(href='#sInterface') sInterface
+			p A minimal user interface for World of Warcraft
+
+			h2#screenshots
+				a(href="#screenshots") Screenshots
+			.row
+				a(href="img/temp.jpg").col-sm-3
+					img(src="img/temp.jpg")
+				a(href="img/temp.jpg").col-sm-3
+					img(src="img/temp.jpg")
+				a(href="img/temp.jpg").col-sm-3
+					img(src="img/temp.jpg")
+
+			h2#about
+				a(href="#about") About
+			p
+				| sInterface is an opinionated UI replacement for the standard BlizzardUI.
+				| Supported configuration is minimal, and only available via lua. Extra features
+				| are kept to a minimum, with class timers and a damage meter being
+				| the only notable additions.
+			p
+				| sInterface's codebase is quite small. If you'd like to try your hand at software
+				| development, this could be a good place to start!
+
+			h2#download
+				a(href="#download") Download
+			p
+				a(href="https://github.com/sBaildon/dotfiles/archive/master.zip") v1.0
+			p md5sum: 4bb8774bf877f75b2598c43e37cf2042
+
+			h2#installation
+				a(href="#installation") Installation
+			ul
+				li Locate your WoW install (#[span.monospace C:/Program Files/World of Warcraft]?)
+				li Backup and remove the  #[span.monospace WTF/] and #[span.monospace Interface/] directories
+				li Make the directory #[span.monospace Interface/AddOns]
+				li Download and extract #[span.monospace sInterface.zip]
+				li Place the extracted directory, #[span.monospace sInterface], into #[span.monospace Interface/AddOns/]
+
+			h2#support
+				a(href="#support") Support
+			p
+				| Opening pull requests and issues on&nbsp;
+				a(href="https://github.com/sBaildon/sInterface") GitHub
+				|  is the simplest way to support development.
+				| If you would like to donate, Vrashka-TwistingNether's
+				| (EU) mailbox is available.
+
+		include ./includes/stylesheets.pug
