@@ -41,7 +41,6 @@ https.get({
 		var url = body['zipball_url']
 		var date = body['published_at']
 		exec(gulpBuilder(url, ver, date), function(error, stdout, stderr) {
-			console.log(`stderr: ${stderr}`);
 			console.log('first fetch')
 		})
 	})
@@ -50,8 +49,8 @@ https.get({
 app.use(bodyParser.json())
 
 app.post('/hook/github/release', function(req, res) {
-	var sig   = req.headers['x-hub-signature']
-	if (!verifyWebHook(sig, req.body)) {
+	var sig = req.headers['x-hub-signature']
+	if (!verifyWebHook(sig, JSON.stringify(req.body))) {
 		console.error('Could not verify webhook')
 		return
 	}
