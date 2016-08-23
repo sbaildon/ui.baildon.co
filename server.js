@@ -67,5 +67,5 @@ app.post('/hook/github/release', function(req, res) {
 app.use(express.static('build/'));
 
 app.listen(port, function () {
-	console.log('Example app listening on port ' + port);
+	console.log('App listening on port ' + port);
 });
