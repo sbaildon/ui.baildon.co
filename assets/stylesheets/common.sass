@@ -1,19 +1,24 @@
 @import 'extras/colours'
 @import 'extras/fonts'
+@import 'extras/mixins'
 
 body
   background: $colour-background
   font-family: 'Inconsolata', monospace
   font-size: 1.2em
   line-height: 1.2em
+  @include phone
+    font-size: 1em
 
 #content
   width: 55%
   margin-left: 5%
   margin-top: 4%
+  @include phone
+    width: 90%
 
 h2,h3,h4,h5,h6
-  margin-top: 1.6em
+  padding-top: 1.5em
 
 a
   color: $colour-link-unvisited

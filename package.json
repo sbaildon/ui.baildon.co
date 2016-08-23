@@ -15,5 +15,12 @@
     "gulp-uglify": "^1.5.3",
     "gulp-watch": "^4.3.5",
     "normalize": "^0.3.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "github-webhook-handler": "^0.6.0",
+    "moment": "^2.14.1",
+    "yargs": "^5.0.0"
   }
 }
