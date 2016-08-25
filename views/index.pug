@@ -12,20 +12,18 @@ html(lang='en')
 			h2#screenshots
 				a(href="#screenshots") Screenshots
 			.row
-				a(href="img/temp.jpg").col-sm-3.col-xs-12
-					img(src="img/temp.jpg")
-				a(href="img/temp.jpg").col-sm-3.col-xs-12
-					img(src="img/temp.jpg")
-				a(href="img/temp.jpg").col-sm-3.col-xs-12
-					img(src="img/temp.jpg")
+				a(href="img/idle.png").col-sm-3.col-xs-12
+					img(src="img/idle.png")
+				a(href="img/party.png").col-sm-3.col-xs-12
+					img(src="img/party.png")
+				a(href="img/raid.png").col-sm-3.col-xs-12
+					img(src="img/raid.png")
 
 			h2#about
 				a(href="#about") About
 			p
 				| sInterface is an opinionated UI replacement for the standard BlizzardUI.
-				| Supported configuration is minimal, and only available via lua. Extra features
-				| are kept to a minimum, with class timers and a damage meter being
-				| the only notable additions.
+				| Supported configuration is minimal, and only available via lua.
 
 			h2#download
 				a(href="#download") Download
@@ -38,9 +36,9 @@ html(lang='en')
 			ul
 				li Locate your WoW install (#[span.monospace C:/Program Files/World of Warcraft])
 				li Backup and remove the contents of the   #[span.monospace WTF/] and #[span.monospace Interface/AddOns] directories
-				li Make the directory #[span.monospace Interface/AddOns]
-				li Download and extract #[span.monospace sInterface.zip]
-				li Place the extracted directory, #[span.monospace sInterface], into #[span.monospace Interface/AddOns/]
+				li Download and extract #[span.monospace sInterface-${VERSION}.zip]
+				li Remove the verion suffix from the extracted directory
+				li Place the renamed directory, #[span.monospace sInterface], into #[span.monospace Interface/AddOns/]
 
 			h2#issues
 				a(href="#issues") Issues
