@@ -1,0 +1,59 @@
+@import "helpers/fonts";
+
+@import "modules/colours";
+@import "modules/typography";
+
+@include font-face("Semplicita", "../fonts/semplicita.woff", $type: "woff")
+
+html {
+	font-family: "Open-Sans", sans-serif;
+	font-size: 19px;
+	line-height: 1.7;
+}
+
+body {
+	background: url("https://eu.battle.net/forums/static/images/backgrounds/background-wow-top.jpg") center -200px no-repeat, url(https://eu.battle.net/forums/static/images/backgrounds/background-wow-repeat.jpg) center 1800px repeat-y #231a13;
+	color: $colour--body;
+}
+
+.image {
+	/* Random fix for making .image behave like a true
+	 * <img> tag, whereby the div will resize to fit the image
+	 * https://stackoverflow.com/a/22211990/6542409
+	 *
+	 * tldr; set padding-top to (img-height / img-width * container-width)
+	 * eg. (1080 / 1920 * 100) = 56.25%
+	 */
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 100%;
+	height: 0;
+	padding-top: 56.25%;
+
+	display: flex;
+	align-items: flex-end;
+
+	h3 {
+		color: $colour--link;
+		margin-left: 0.75em;
+		line-height: 0.75em;
+	}
+
+	border: 1px solid $colour--body;
+	&:hover {
+		border: 1px solid $colour--link;
+	}
+	outline: 1px solid black;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22), inset -1px -88px 42px -20px rgba(0,0,0,0.6);
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: $colour--white;
+}
+
+code {
+	background-color: rgba(0, 0, 0, .25);
+	border: 1px solid rgba(255, 255, 255, .15);
+	padding: 0.3rem;
+}

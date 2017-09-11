@@ -1,0 +1,33 @@
+@import "colours";
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Semplicita";
+	letter-spacing: 0.03em;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+h3 {
+	font-size: 1rem;
+}
+
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+	color: $colour--link;
+}
+
+ul {
+	padding-left: 0;
+	list-style-type: square;
+	list-style-position: inside;
+	line-height: 2.2em;
+}
