@@ -3,6 +3,8 @@
 @import "modules/colours";
 @import "modules/typography";
 
+@import "footer";
+
 @include font-face("Semplicita", "../fonts/semplicita.woff", $type: "woff")
 
 html {
@@ -14,6 +16,21 @@ html {
 body {
 	background: url("https://eu.battle.net/forums/static/images/backgrounds/background-wow-top.jpg") center -200px no-repeat, url(https://eu.battle.net/forums/static/images/backgrounds/background-wow-repeat.jpg) center 1800px repeat-y #231a13;
 	color: $colour--body;
+}
+
+main,footer {
+	margin-left: 4vw;
+	margin-right: 4vw;
+
+	@media only screen and (min-width : 480px) {
+		margin-left: 8vw;
+		margin-right: 0;
+		max-width: 50vw;
+	}
+}
+
+main {
+	margin-bottom: 10vh;
 }
 
 .image {
@@ -58,4 +75,10 @@ code {
 	background-color: rgba(0, 0, 0, .25);
 	border: 1px solid rgba(255, 255, 255, .15);
 	padding: 0.3rem;
+}
+
+hr {
+	border: none;
+	height: 1px;
+	background-color: rgba(255, 255, 255, .15);
 }
