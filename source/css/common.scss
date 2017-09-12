@@ -38,14 +38,16 @@ body {
 		color: $colour--link;
 		margin-left: 0.75em;
 		line-height: 0.75em;
+
+	}
+	&:hover {
+		h3 {
+			color: $colour--white;
+		}
 	}
 
-	border: 1px solid $colour--body;
-	&:hover {
-		border: 1px solid $colour--link;
-	}
 	outline: 1px solid black;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22), inset -1px -88px 42px -20px rgba(0,0,0,0.6);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22), inset 0 0 0 1px rgba(255, 255, 255, .20), inset -1px -88px 42px -20px rgba(0,0,0,0.6);
 }
 
 h1,h2,h3,h4,h5,h6 {
