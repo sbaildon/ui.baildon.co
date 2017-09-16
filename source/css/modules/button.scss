@@ -1,0 +1,23 @@
+@import "colours";
+
+button {
+	border-color: #c77e19;
+	border-radius: 0;
+	color: $colour--link;
+	background-color: rgba(0, 0, 0, .4);
+	text-transform: uppercase;
+	font-size: .9296875rem;
+	height: 1.875rem;
+	line-height: 1.5;
+	padding: 0 .75rem;
+	border-style: solid;
+
+	&:hover {
+		color: $colour--white;
+		background-color: rgb(176, 102, 1);
+	}
+
+	&:active {
+		background-color: rgb(138, 80, 0);
+	}
+}

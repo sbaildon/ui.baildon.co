@@ -57,7 +57,14 @@ html(lang='en')
 				p
 					| Opening pull requests and issues on&nbsp;
 					a(href="https://github.com/sBaildon/sInterface") GitHub
-					|  is the simplest way to support development.
+					|  is the simplest way to support the project.
+					| You can also contribute to development with a small donation.
+
+				div#payments
+					form
+						button(type=submit, formaction="https://paypal.me/sbaildon", formtarget="_blank") paypal
+					form
+						button(type=submit, formaction="https://monzo.me/seanbaildon", formtarget="_blank") monzo
 
 		include ./includes/stylesheets.pug
 

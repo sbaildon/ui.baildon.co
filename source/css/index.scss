@@ -19,3 +19,11 @@ main {
 		text-decoration: none;
 	}
 }
+
+#payments {
+	display: flex;
+
+	form:not(:last-child) {
+		margin-right: 1em;
+	}
+}
