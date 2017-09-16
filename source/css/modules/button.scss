@@ -3,6 +3,7 @@
 button {
 	border-color: #c77e19;
 	border-radius: 0;
+	border-width: 1px;
 	color: $colour--link;
 	background-color: rgba(0, 0, 0, .4);
 	text-transform: uppercase;
@@ -11,6 +12,7 @@ button {
 	line-height: 1.5;
 	padding: 0 .75rem;
 	border-style: solid;
+	outline: 1px solid black;
 
 	&:hover {
 		color: $colour--white;
