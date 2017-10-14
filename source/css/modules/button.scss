@@ -17,6 +17,7 @@ button {
 	&:hover {
 		color: $colour--white;
 		background-color: rgb(176, 102, 1);
+		cursor: pointer;
 	}
 
 	&:active {
