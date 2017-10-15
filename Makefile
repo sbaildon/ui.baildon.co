@@ -19,7 +19,10 @@ CSS_LIBS=node_modules/normalize.css/normalize.css
 FONT_FILES_SOURCE=$(shell find $(SOURCE_DIR)/fonts/ -type  f)
 FONT_FILES=$(patsubst $(SOURCE_DIR)/%, $(BUILD_DIR)/%, $(FONT_FILES_SOURCE))
 
-all: node_modules/.yarn-integrity $(BUILD_DIR) $(FONT_FILES) $(HTML_FILES) $(CSS_FILES)
+IMG_FILES_SOURCE=$(shell find $(SOURCE_DIR)/img/ -type f)
+IMG_FILES=$(patsubst $(SOURCE_DIR)/%, $(BUILD_DIR)/%, $(IMG_FILES_SOURCE))
+
+all: node_modules/.yarn-integrity $(BUILD_DIR) $(FONT_FILES) $(HTML_FILES) $(CSS_FILES) $(IMG_FILES)
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
@@ -31,6 +34,10 @@ $(BUILD_DIR)/%.html: $(SOURCE_DIR)/views/%.pug $(PUG_INCLUDES)
 	$(PUG) $(PUG_FLAGS) $< -o $(BUILD_DIR)
 
 $(BUILD_DIR)/fonts/%: $(SOURCE_DIR)/fonts/%
+	mkdir -p `dirname $@`
+	cp $^ $(dir $@)
+
+$(BUILD_DIR)/img/%: $(SOURCE_DIR)/img/%
 	mkdir -p `dirname $@`
 	cp $^ $(dir $@)
 
