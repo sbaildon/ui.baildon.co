@@ -23,9 +23,10 @@ html(lang='en')
 			section#about
 				h2 About
 				p.
-					sInterface is an opinionated UI replacement for the standard BlizzardUI.
-					Supported configuration is minimal, and only available via lua. Additional
-					features are kept to a minimum. Not for the faint of heart.
+					sInterface is an opinionated replacement for the standard BlizzardUI. Reductionism is the goal. Fewer, smaller elements; frames that show when required; key information in spotlight.
+
+				p.
+					Supported configuration is minimal, and only available with lua files. sInterface has no concept of character profiles, configuration is shared between all characters without any setup. If you want to configure sInterface you will need to use a text editor to change the files found in #[code config/], save,  then reload your UI in game with #[code /reload].
 
 			section#download
 				h2 Download
@@ -35,12 +36,32 @@ html(lang='en')
 
 			section#installation
 				h2 Installation
+				h3 Easy Install
 				ul
 					li Locate your WoW install, likely #[code C:/Program Files/World of Warcraft]
 					li Backup and remove the #[code WTF/] and #[code Interface/AddOns] directories
 					li Unzip the #[code sInterface.zip] file
 					li Rename #[code _config/] inside #[code sInterface/] to #[code config]
 					li Move the extracted directory, #[code sInterface], to #[code Interface/AddOns/]
+
+				h3 Git
+				p.
+					Familiar with git? Clone the repository directly into #[code Interface/AddOns/]
+				ul
+					li #[code git clone --recursive https://github.com/sBaildon/sInterface.git]
+
+				h3 Updating
+				p.
+					When it comes to updating, download the new #[code .zip] and overwrite the #[code sInterface]
+					directory in #[code Interface/AddOns]. Don't rename #[code _config] unless you're looking
+					to reset all your settings!
+
+			section#tips
+				ul
+					li Press #[code ctrl], #[code shift], and #[code alt] to show your action bars
+					li Want to have actionbars shown at all times? Change the visibility driver to #[code show]
+					li sInterface has aura filters, check out the filter module to track auras on units
+					li Toggle errors like 'Out of range' with #[code /errors]
 
 			section#issues
 				h2 Issues
