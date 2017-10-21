@@ -20,7 +20,7 @@ FONT_FILES_SOURCE=$(shell find $(SOURCE_DIR)/fonts/ -type  f)
 FONT_FILES=$(patsubst $(SOURCE_DIR)/%, $(BUILD_DIR)/%, $(FONT_FILES_SOURCE))
 
 IMG_FILES_SOURCE=$(shell find $(SOURCE_DIR)/img/ -type f)
-IMG_FILES=$(patsubst $(SOURCE_DIR)/%, $(BUILD_DIR)/%, $(IMG_FILES_SOURCE))
+IMG_FILES=$(patsubst $(SOURCE_DIR)/%.png, $(BUILD_DIR)/%.jpg, $(IMG_FILES_SOURCE))
 
 all: node_modules/.yarn-integrity $(BUILD_DIR) $(FONT_FILES) $(HTML_FILES) $(CSS_FILES) $(IMG_FILES)
 
@@ -34,12 +34,12 @@ $(BUILD_DIR)/%.html: $(SOURCE_DIR)/views/%.pug $(PUG_INCLUDES)
 	$(PUG) $(PUG_FLAGS) $< -o $(BUILD_DIR)
 
 $(BUILD_DIR)/fonts/%: $(SOURCE_DIR)/fonts/%
-	mkdir -p `dirname $@`
+	mkdir -p $(@D)
 	cp $^ $(dir $@)
 
-$(BUILD_DIR)/img/%: $(SOURCE_DIR)/img/%
-	mkdir -p `dirname $@`
-	cp $^ $(dir $@)
+$(BUILD_DIR)/img/%.jpg: $(SOURCE_DIR)/img/%.png Makefile
+	mkdir -p $(@D)
+	mogrify -format jpg -path $(@D) -quality 90 $<
 
 node_modules/.yarn-integrity: package.json yarn.lock
 	yarn install
