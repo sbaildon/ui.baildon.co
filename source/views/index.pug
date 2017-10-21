@@ -23,20 +23,31 @@ html(lang='en')
 			section#about
 				h2 About
 				p.
-					sInterface is an opinionated replacement for the standard BlizzardUI. Reductionism is the goal. Fewer, smaller elements; frames that show when required; key information in spotlight.
+					sInterface is an opinionated replacement for the standard BlizzardUI.
+					Reductionism is the goal. Fewer, smaller elements; frames that show
+					when required; key information in the spotlight.
 
 				p.
-					Supported configuration is minimal, and only available with lua files. sInterface has no concept of character profiles, configuration is shared between all characters without any setup. If you want to configure sInterface you will need to use a text editor to change the files found in #[code config/], save,  then reload your UI in game with #[code /reload].
+					Supported configuration is minimal, and only available by editing lua files.
+					sInterface has no concept of character profiles, configuration is shared
+					between all characters without any setup.
 
 			section#download
 				h2 Download
 				p
 					a(href="https://github.com/sBaildon/sInterface/releases/download/v0.9.1/sInterface.zip").
-							sInterface-v0.9.1.zip
+							sInterface-v0.9-BETA.zip
+
+			section#releaseNotes
+				h2 Release notes
+				h3 v0.9-BETA
+				ul
+					li First public release
+
 
 			section#installation
 				h2 Installation
-				h3 Easy Install
+				h3 Basic Install
 				ul
 					li Locate your WoW install, likely #[code C:/Program Files/World of Warcraft]
 					li Backup and remove the #[code WTF/] and #[code Interface/AddOns] directories
@@ -52,13 +63,13 @@ html(lang='en')
 
 				h3 Updating
 				p.
-					When it comes to updating, download the new #[code .zip] and overwrite the #[code sInterface]
-					directory in #[code Interface/AddOns]. Don't rename #[code _config] unless you're looking
-					to reset all your settings!
+					Replace #[code sInterface] in #[code Interface/Addons] with the new version.
+					Only rename #[code _config] if you want to overwrite your settings!
 
 			section#tips
 				h2 Tips
 				ul
+					li Edit config files with a text editor, then run #[code /reload] in game
 					li Press #[code ctrl], #[code shift], and #[code alt] to show your action bars
 					li Want to have actionbars shown at all times? Change the visibility driver to #[code show]
 					li sInterface has aura filters, check out the filter module to track auras on units
