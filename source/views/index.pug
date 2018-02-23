@@ -35,8 +35,9 @@ html(lang='en')
 			section#download
 				h2 Download
 				p
-					a(href="https://github.com/sBaildon/sInterface/releases/download/0.9.1-BETA/sInterface-0.9.1-BETA.zip").
-							sInterface-v0.9.1-BETA.zip
+					a(href=locals.assets[0].browser_download_url).
+						#{locals.assets[0].name}
+
 
 			section#installation
 				h2 Installation

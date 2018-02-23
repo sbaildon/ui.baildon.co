@@ -23,6 +23,8 @@ IMG_FILES_SOURCE=$(shell find $(SOURCE_DIR)/img/ -type f)
 IMG_FILES=$(patsubst $(SOURCE_DIR)/%.png, $(BUILD_DIR)/%.jpg, $(IMG_FILES_SOURCE))
 IMG_THUMBS=$(patsubst $(SOURCE_DIR)/img/%.png, $(BUILD_DIR)/img/thumbs/%.jpg, $(IMG_FILES_SOURCE))
 
+RELEASE_ENDPOINT=https://api.github.com/repos/sbaildon/sInterface/releases/latest
+
 all: node_modules/.yarn-integrity $(BUILD_DIR) $(FONT_FILES) $(HTML_FILES) $(CSS_FILES) $(IMG_FILES) $(IMG_THUMBS)
 
 $(BUILD_DIR):
@@ -32,7 +34,8 @@ $(BUILD_DIR)/stylesheets/%.css: $(SOURCE_DIR)/css/%.scss $(SCSS_EXTRAS)
 	$(SCSS) $(SCSS_FLAGS) $< -o $(BUILD_DIR)/stylesheets/
 
 $(BUILD_DIR)/%.html: $(SOURCE_DIR)/views/%.pug $(PUG_INCLUDES)
-	$(PUG) $(PUG_FLAGS) $< -o $(BUILD_DIR)
+	$(eval json=$(shell curl -s $(RELEASE_ENDPOINT)))
+	$(PUG) $(PUG_FLAGS) $< -O '$(json)' -o $(BUILD_DIR)
 
 $(BUILD_DIR)/fonts/%: $(SOURCE_DIR)/fonts/%
 	mkdir -p $(@D)
