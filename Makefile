@@ -33,9 +33,10 @@ $(BUILD_DIR):
 $(BUILD_DIR)/stylesheets/%.css: $(SOURCE_DIR)/css/%.scss $(SCSS_EXTRAS)
 	$(SCSS) $(SCSS_FLAGS) $< -o $(BUILD_DIR)/stylesheets/
 
-$(BUILD_DIR)/%.html: $(SOURCE_DIR)/views/%.pug $(PUG_INCLUDES)
-	$(eval json=$(shell curl -s $(RELEASE_ENDPOINT)))
-	$(PUG) $(PUG_FLAGS) $< -O '$(json)' -o $(BUILD_DIR)
+.PHONY: $(BUILD_DIR)/index.html
+$(BUILD_DIR)/index.html: $(SOURCE_DIR)/views/index.pug $(PUG_INCLUDES)
+	$(eval json=$(shell curl --silent $(RELEASE_ENDPOINT) | jq .assets[0] ))
+	$(PUG) $(PUG_FLAGS) $< --obj '$(json)' --out $(BUILD_DIR)
 
 $(BUILD_DIR)/fonts/%: $(SOURCE_DIR)/fonts/%
 	mkdir -p $(@D)
