@@ -38,27 +38,20 @@ html(lang='en')
 					a(href=locals.browser_download_url).
 						#{locals.name}
 
-
 			section#installation
 				h2 Installation
-				h3 Basic Install
+				h3 Standard
 				ul
 					li Locate your WoW install, likely #[code C:/Program Files/World of Warcraft]
-					li Backup and remove the #[code WTF/] and #[code Interface/AddOns] directories
-					li Unzip the #[code sInterface.zip] file
-					li Rename #[code _config/] inside #[code sInterface/] to #[code config]
-					li Move the extracted directory, #[code sInterface], to #[code Interface/AddOns/]
+					li Optionally, backup and remove the #[code WTF/] and #[code Interface/AddOns] directories
+					li Unzip #[code sInterface.zip]
+					li Move the extracted directory, #[code sInterface], into #[code Interface/AddOns/]
 
 				h3 Git
 				p.
 					Familiar with git? Clone the repository directly into #[code Interface/AddOns/]
 				ul
 					li #[code git clone --recursive https://github.com/sBaildon/sInterface.git]
-
-				h3 Updating
-				p.
-					Replace #[code sInterface] in #[code Interface/Addons] with the new version.
-					Only rename #[code _config] if you want to overwrite your settings!
 
 			section#tips
 				h2 Tips
