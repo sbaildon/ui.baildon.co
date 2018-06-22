@@ -34,24 +34,51 @@ html(lang='en')
 
 			section#download
 				h2 Download
+				h3 Interface
 				p
 					a(href=locals.browser_download_url).
 						#{locals.name}
 
-			section#installation
-				h2 Installation
-				h3 Standard
-				ul
-					li Locate your WoW install, likely #[code C:/Program Files/World of Warcraft/]
-					li Optionally, backup and remove the #[code WTF/] and #[code Interface/AddOns/] directories
-					li Unzip #[code sInterface.zip]
-					li Move the extracted directory, #[code sInterface/], into #[code Interface/AddOns/]
-
-				h3 Git
+				h3 Fonts
 				p.
-					Familiar with git? Clone the repository directly into #[code Interface/AddOns/]
-				ul
-					li #[code git clone --recursive https://github.com/sBaildon/sInterface.git]
+
+				p
+					a(href="https://github.com/sBaildon/sInterface/releases/download/fonts/Fonts.zip").
+						Fonts.zip
+
+			section#installation
+				div
+					h2 Installation
+					h3 Standard
+					ul
+						li Locate your WoW install, likely #[code C:/Program Files/World of Warcraft/]
+						li Optionally, backup and remove the #[code WTF/] and #[code Interface/AddOns/] directories
+						li Unzip #[code sInterface.zip]
+						li Move the extracted directory, #[code sInterface/], into #[code Interface/AddOns/]
+
+				div
+					h3 WoW AddOn Downloader
+					p.
+						Use #[a(href="https://github.com/sBaildon/wow-addon-downloader") wow-addon-downloader]
+						for simple, one click installation.
+
+
+				div
+					h3 Git
+					p.
+						Familiar with git? Clone the repository directly into #[code Interface/AddOns/]
+					ul
+						li #[code git clone --recursive 'https://github.com/sBaildon/sInterface.git']
+
+				div
+					h3 Fonts (Optional)
+					p.
+						Optionally replace Blizzard fonts with the fonts sInterface uses.
+						Replacing the Blizzard fonts will change elements like the objective tracker, quest text,
+						and character screen text, to improve the coherence of your UI.
+
+					ul
+						li Unzip #[code Fonts.zip], then move #[code Fonts/] into #[code C:/.../World of Warcraft/]
 
 			section#Documentation
 				h2 Documentation
