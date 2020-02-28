@@ -34,9 +34,9 @@ html(lang='en')
 
 			section#download
 				h2 Download
-				p
-					a(href=locals.browser_download_url).
-						#{locals.name}
+
+				form(action=locals.browser_download_url)
+					button(type=submit)  #{locals.name}
 
 			section#installation
 				h2 Installation
