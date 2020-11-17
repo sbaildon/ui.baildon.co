@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>sInterface</title>
+	<meta charset="utf-8">
+	<meta name="description" content="A World of Warcraft UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans">
+</head>
+
+<body>
+	<main>
+		<section id="intro">
+			<h1>sInterface</h1>
+			<p>A user interface for World of Warcraft</p>
+		</section>
+
+		<section id="screenshots">
+			<h2>Screenshots</h2>
+
+
+			<div id="grid">
+				<a href="{{ get_url(path="idle.png") }}" target="_blank">
+					<div class="image"
+						style="background-image: url({{ resize_image(path="idle.png", width=480, height=360, format="jpg", quality=60, op="fit") }})">
+						<h3>Idle</h3>
+					</div>
+				</a>
+				<a href="/party.png" target="_blank">
+					<div class="image"
+						style="background-image: url({{ resize_image(path="party.png", width=480, height=360, format="jpg", quality=60, op="fit") }})">
+						<h3>Party</h3>
+					</div>
+				</a>
+				<a href="/raid.png" target="_blank">
+					<div class="image"
+						style="background-image: url({{ resize_image(path="raid.png", width=480, height=360, format="jpg", quality=60, op="fit") }})">
+						<h3>Raid</h3>
+					</div>
+				</a>
+			</div>
+		</section>
+
+		<section id="about">
+			<h2>About</h2>
+
+			<p>
+				sInterface is an opinionated replacement for the standard BlizzardUI.
+				Reductionism is the goal. Fewer, smaller elements; frames that show
+				when required; key information in the spotlight.
+			</p>
+
+			<p>
+				Supported configuration is minimal, and only available by editing lua files.
+				sInterface has no concept of character profiles, configuration is shared
+				between all characters without any setup.
+			</p>
+		</section>
+
+		<section id="download">
+			<h2>Download</h2>
+		</section>
+
+		<section id="installation">
+			<h2>Installation</h2>
+
+			<div>
+				<h3>Standard</h3>
+				<ul>
+					<li>
+						Locate your WoW install, likely
+						<code>C:/Program Files/World of Warcraft/_retail_</code>
+					</li>
+					<li>
+						Unzip <code>sInterface.zip</code>
+					</li>
+					<li>
+						Move the extracted directory, <code>sInterface/</code>, into
+						<code>Interface/AddOns/</code>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section id="support">
+			<h2>Supporting</h2>
+			<p>
+				Opening pull requests and issues on
+				<a href="https://github.com/sbaildon/sInterface">GitHub</a>
+				is the simplest way to support the project.
+			</p>
+		</section>
+	</main>
+
+	<footer>
+		<hr>
+		<strong>World of Warcraft®</strong>
+		<p>
+			©2004 Blizzard Entertainment, Inc. All rights reserved. World of Warcraft, Warcraft and Blizzard
+			Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the
+			U.S. and/or
+			other countries.
+		</p>
+	</footer>
+</body>
+
+</html>
