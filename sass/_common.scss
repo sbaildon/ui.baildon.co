@@ -52,6 +52,9 @@ main {
 	display: flex;
 	align-items: flex-end;
 
+	transition: ease-in-out;
+	transition-duration: 0.1s;
+
 	h3 {
 		color: $colour--link;
 		margin-left: 0.75em;
@@ -62,6 +65,7 @@ main {
 		h3 {
 			color: $colour--white;
 		}
+		box-shadow: 0 20px 36px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.22), inset 0 0 0 1px rgba(255, 255, 255, .20), inset -1px -70px 42px -20px rgba(0,0,0,0.8);
 	}
 
 	outline: 1px solid black;
