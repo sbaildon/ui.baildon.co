@@ -3,10 +3,12 @@
 @import "modules/colours";
 @import "modules/typography";
 @import "modules/button";
+@import "modules/hr";
+@import "modules/code";
 
 @import "footer";
 
-@include font-face("Semplicita", "../fonts/semplicita.woff", $type: "woff")
+@include font-face("Semplicita", "../fonts/semplicita.woff", $type: "woff");
 
 html {
 	font-family: "Open-Sans", sans-serif;
@@ -14,12 +16,14 @@ html {
 	line-height: 1.7;
 }
 
+pre {
+	background-color: none;
+}
+
 body {
 	background: url("https://eu.battle.net/forums/static/images/backgrounds/background-wow-top.jpg") center -200px no-repeat, url(https://eu.battle.net/forums/static/images/backgrounds/background-wow-repeat.jpg) center 1800px repeat-y #231a13;
 	color: $colour--body;
-}
 
-main,footer {
 	margin-left: 4vw;
 	margin-right: 4vw;
 
@@ -30,62 +34,6 @@ main,footer {
 	}
 }
 
-main {
-	margin-bottom: 10vh;
-}
-
-.image {
-	/* Random fix for making .image behave like a true
-	 * <img> tag, whereby the div will resize to fit the image
-	 * https://stackoverflow.com/a/22211990/6542409
-	 *
-	 * tldr; set padding-top to (img-height / img-width * container-width)
-	 * eg. (1080 / 1920 * 100) = 56.25%
-	 */
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	width: 100%;
-	height: 0;
-	padding-top: 56.25%;
-
-	display: flex;
-	align-items: flex-end;
-
-	transition: ease-in-out;
-	transition-duration: 0.1s;
-
-	h3 {
-		color: $colour--link;
-		margin-left: 0.75em;
-		line-height: 0.75em;
-		margin: 1em;
-	}
-	&:hover {
-		h3 {
-			color: $colour--white;
-		}
-		box-shadow: 0 20px 36px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.22), inset 0 0 0 1px rgba(255, 255, 255, .20), inset -1px -70px 42px -20px rgba(0,0,0,0.8);
-	}
-
-	outline: 1px solid black;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22), inset 0 0 0 1px rgba(255, 255, 255, .20), inset -1px -70px 42px -20px rgba(0,0,0,0.8);
-}
-
 h1,h2,h3,h4,h5,h6 {
 	color: $colour--white;
-}
-
-code {
-	background-color: rgba(0, 0, 0, .25);
-	border: 1px solid rgba(255, 255, 255, .15);
-	padding: 0.3rem;
-	line-height: 1em;
-	display: inline-block;
-}
-
-hr {
-	border: none;
-	height: 1px;
-	background-color: rgba(255, 255, 255, .15);
 }
