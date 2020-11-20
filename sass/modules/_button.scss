@@ -1,17 +1,18 @@
 @import "colours";
 
-button {
+.button {
 	border-color: #c77e19;
 	border-radius: 0;
 	border-width: 1px;
 	color: $colour--link;
 	background-color: rgba(0, 0, 0, .4);
 	font-size: .9296875rem;
-	height: 1.875rem;
+	// height: 1.875rem;
 	line-height: 1.5;
-	padding: 0 .75rem;
+	padding: 0.3rem .75rem;
 	border-style: solid;
 	outline: 1px solid black;
+	display: inline-block;
 
 	&:hover {
 		color: $colour--white;
