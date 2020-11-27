@@ -22,7 +22,7 @@ Toc files are the entrypoint to an addon. They contain metadata and list all fil
 Create `sInterface_Config.toc`
 
 ```
-## Interface: 90001
+## Interface: 90002
 ## Title: sInterface Config
 ## Notes: User customisation
 
