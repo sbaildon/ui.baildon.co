@@ -1,7 +1,2 @@
-.PHONY: release clean
-
 release:
-	zola build
-
-clean:
-	rm -rf public
+	rsync -r --delete site/ baildon.co:/srv/www/ui.baildon.co
